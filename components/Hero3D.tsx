@@ -4,7 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere, OrbitControls } from '@react-three/drei';
 
 function Model() {
-  const meshRef = useRef<any>();
+  const meshRef = useRef<any>(null);
   useFrame((state) => {
     if (meshRef.current) {
       // Keep slow rotation but allow manual override
