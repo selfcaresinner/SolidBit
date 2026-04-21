@@ -33,6 +33,7 @@ export async function POST(req: Request) {
       quantity: 1,
     }));
 
+    // Create session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items,
@@ -45,7 +46,7 @@ export async function POST(req: Request) {
       },
     });
 
-    return NextResponse.json({ sessionId: session.id });
+    return NextResponse.json({ url: session.url });
   } catch (error) {
     console.error('Error creating checkout session:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });

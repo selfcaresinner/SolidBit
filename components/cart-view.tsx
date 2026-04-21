@@ -18,7 +18,6 @@ export function CartView() {
   const total = coupon ? subtotal * (1 - coupon.pct) : subtotal;
 
   const handleCheckout = async () => {
-    const stripe = await stripePromise;
     const res = await fetch('/api/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -28,8 +27,12 @@ export function CartView() {
         total
       }),
     });
-    const { sessionId } = await res.json();
-    await (stripe as any)?.redirectToCheckout({ sessionId });
+    const { url } = await res.json();
+    if (url) {
+      window.location.href = url;
+    } else {
+      console.error("No se recibió la URL de sesión");
+    }
   };
 
   return (
