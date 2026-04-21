@@ -13,7 +13,7 @@ export default function Home() {
       <section id="hero" className="flex flex-col items-center justify-center min-h-[80vh] border-b border-surgical-border">
         <h1 className="text-8xl md:text-[12rem] font-sans font-bold tracking-tighter text-white uppercase italic">SolidBit</h1>
         <Hero3D />
-        <p className="text-xl md:text-2xl font-mono text-cyan-accent mb-12">ENGINEERING ELEGANCE / ARTISTIC FORM</p>
+        <p className="text-xl md:text-2xl font-mono text-cyan-accent mb-12">ELEGANCIA EN INGENIERÍA / FORMA ARTÍSTICA</p>
       </section>
 
       <section id="pillars">

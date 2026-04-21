@@ -29,7 +29,7 @@ export function CartView() {
       }),
     });
     const { sessionId } = await res.json();
-    await stripe?.redirectToCheckout({ sessionId });
+    await (stripe as any)?.redirectToCheckout({ sessionId });
   };
 
   return (
