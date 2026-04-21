@@ -40,7 +40,7 @@ export function CartView() {
       <h2 className="text-5xl font-sans font-bold mb-12">Su Solución (Carrito)</h2>
       <div className="grid grid-cols-2 gap-12">
         <div className="space-y-6">
-            {cart.map((p, i) => <div key={i} className="border-b border-gray-800 pb-4 flex justify-between">{p.title} <span>${p.price}</span></div>)}
+            {cart.map((p: any, i: number) => <div key={i} className="border-b border-gray-800 pb-4 flex justify-between">{p.title} <span>${p.price}</span></div>)}
         </div>
         
         <div className="bg-slate-card p-12 border border-surgical-border space-y-6">
