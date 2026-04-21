@@ -14,7 +14,7 @@ export function CartView() {
   const [couponInput, setCouponInput] = useState('');
   const router = useRouter();
 
-  const subtotal = cart.reduce((acc, p) => acc + p.price, 0);
+  const subtotal = cart.reduce((acc: number, p: any) => acc + p.price, 0);
   const total = coupon ? subtotal * (1 - coupon.pct) : subtotal;
 
   const handleCheckout = async () => {
