@@ -1,7 +1,11 @@
+'use client';
 import type {Metadata} from 'next';
 import './globals.css';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { cn } from "@/lib/utils";
+import { CartProvider } from '@/lib/cart-context';
+import { Header } from '@/components/header';
+import { LoadingScreen } from '@/components/LoadingScreen';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,16 +17,15 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
 });
 
-export const metadata: Metadata = {
-  title: 'SolidBit | Ingeniería de Alta Fidelidad',
-  description: 'Ingeniería de Alta Fidelidad para la Complejidad Real',
-};
-
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={cn("font-sans antialiased", inter.variable, jetbrainsMono.variable)}>
-      <body suppressHydrationWarning className="bg-[#050505] text-white">
-        {children}
+      <body suppressHydrationWarning className="bg-deep-black text-white">
+        <LoadingScreen />
+        <CartProvider>
+            <Header />
+            {children}
+        </CartProvider>
       </body>
     </html>
   );

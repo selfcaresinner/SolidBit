@@ -2,12 +2,12 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-deep-black: #050505;
-  --color-slate-card: #0F0F10;
-  --color-surgical-border: #1F1F21;
-  --color-cyan-accent: #00E5FF;
-  --color-text-p: #FFFFFF;
-  --color-text-s: #A0A0A0;
+  --color-deep-black: #1a1a2e;
+  --color-slate-card: #2d2f47;
+  --color-surgical-border: #404260;
+  --color-cyan-accent: #00a896; 
+  --color-text-p: #ffffff;
+  --color-text-s: #c0c0c0;
 }
 @import "shadcn/tailwind.css";
 
