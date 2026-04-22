@@ -19,7 +19,7 @@ export function Footer() {
 
           <div className="text-right">
             <p className="font-mono text-text-s text-xs uppercase mb-1">Contacto</p>
-            <a href="mailto:soporte@solidbit.mx" className="font-mono text-cyan-accent text-sm hover:underline">soporte@solidbit.mx</a>
+            <a href="mailto:contacto@solidbit.mx" className="font-mono text-cyan-accent text-sm hover:underline">contacto@solidbit.mx</a>
           </div>
         </div>
 

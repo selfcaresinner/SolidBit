@@ -4,7 +4,7 @@ export function ContactForm() {
       <div className="max-w-xl mx-auto space-y-6">
         <h2 className="font-sans text-3xl text-text-p">Ejecución de Comando</h2>
         <p className="font-mono text-sm text-text-s mb-6">
-          CONTACTO: <a href="mailto:lawlieeet@outlook.es" className="text-cyan-accent hover:underline">lawlieeet@outlook.es</a>
+          CONTACTO: <a href="mailto:contacto@solidbit.mx" className="text-cyan-accent hover:underline">contacto@solidbit.mx</a>
         </p>
         <form className="space-y-4">
           <input type="text" placeholder="ID_USUARIO" className="w-full bg-slate-card border border-surgical-border p-3 text-text-p font-mono" />
