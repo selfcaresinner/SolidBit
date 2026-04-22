@@ -35,7 +35,10 @@ export async function POST(req: Request) {
       .select('id')
       .single();
 
-    if (custError) throw custError;
+    if (custError) {
+      console.error('Supabase customer upsert error:', custError);
+      throw custError;
+    }
 
     // 2. Definición línea de artículos (para Stripe)
     const line_items = cart.map((item: any) => ({
@@ -50,10 +53,20 @@ export async function POST(req: Request) {
     // 3. Crear sesión en Stripe
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items,
+      line_items: line_items.map(item => ({
+        price_data: {
+          currency: 'mxn', // Changed to MXN based on your test intent
+          product_data: { 
+            name: item.price_data.product_data.name,
+            description: item.price_data.product_data.description 
+          },
+          unit_amount: item.price_data.unit_amount,
+        },
+        quantity: item.quantity,
+      })),
       mode: 'payment',
-      success_url: `${process.env.APP_URL || 'http://localhost:3000'}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.APP_URL || 'http://localhost:3000'}/cart`,
+      success_url: `${process.env.APP_URL || 'https://solidbit-production.up.railway.app'}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.APP_URL || 'https://solidbit-production.up.railway.app'}/cart`,
       customer_email: contactInfo.email,
     });
 
@@ -69,7 +82,10 @@ export async function POST(req: Request) {
       .select('id')
       .single();
 
-    if (orderError) throw orderError;
+    if (orderError) {
+      console.error('Supabase order insert error:', orderError);
+      throw orderError;
+    }
 
     // 5. Persistencia: Insertar Items de la Orden
     const orderItems = cart.map((item: any) => ({
@@ -80,11 +96,14 @@ export async function POST(req: Request) {
     }));
 
     const { error: itemsError } = await supabase.from('order_items').insert(orderItems);
-    if (itemsError) throw itemsError;
+    if (itemsError) {
+      console.error('Supabase order items insert error:', itemsError);
+      throw itemsError;
+    }
 
     return NextResponse.json({ url: session.url });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error creating checkout session:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }
