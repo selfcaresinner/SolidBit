@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     // 3. Crear sesión en Stripe
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: line_items.map(item => ({
+      line_items: line_items.map((item: any) => ({
         price_data: {
           currency: 'mxn', // Changed to MXN based on your test intent
           product_data: { 
