@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     // 2. Definición línea de artículos (para Stripe)
     const line_items = cart.map((item: any) => ({
       price_data: {
-        currency: 'usd',
+        currency: 'mxn', // Match with session currency
         product_data: { name: item.title, description: item.desc },
         unit_amount: Math.round(item.price * 100),
       },
