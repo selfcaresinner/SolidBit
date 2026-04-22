@@ -6,7 +6,7 @@ const CartContext = createContext<any>(null);
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<any[]>([]);
   const [coupon, setCoupon] = useState<{code: string, pct: number} | null>(null);
-  const [contactInfo, setContactInfo] = useState({name: '', email: ''});
+  const [contactInfo, setContactInfo] = useState({name: '', email: '', phone: '', company: '', address: ''});
 
   const addToCart = (product: any) => {
     setCart((prev) => [...prev, product]);
@@ -21,7 +21,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     return false;
   };
 
-  const updateContact = (info: {name: string, email: string}) => setContactInfo(info);
+  const updateContact = (info: any) => setContactInfo(info);
 
   return (
     <CartContext.Provider value={{ cart, addToCart, applyCoupon, coupon, contactInfo, updateContact }}>

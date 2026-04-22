@@ -13,19 +13,19 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const products: any = {
     'module_01': { 
       title: "Análisis Estratégico", 
-      price: 1000, 
+      price: 1, 
       desc: "Elevamos la visión operativa mediante diagnósticos de alta precisión.",
       details: "Revisamos a fondo cómo está funcionando tu plataforma para detectar oportunidades de mejora y puntos que podrían frenar tu crecimiento. Te entregamos un informe claro para que sepas dónde enfocar tus esfuerzos y qué ajustar primero."
     },
     'module_02': { 
       title: "Arquitectura Sofisticada", 
-      price: 2500, 
+      price: 1, 
       desc: "Construimos bases lógicas robustas que soportan el crecimiento a escala.",
       details: "Diseñamos la estructura digital de tu negocio para que sea flexible y resistente. Nos aseguramos de que tu plataforma esté preparada para crecer contigo sin importar cuánto aumente la demanda, manteniendo siempre la estabilidad necesaria."
     },
     'module_03': { 
       title: "Entrega de Software", 
-      price: 1500, 
+      price: 1, 
       desc: "Implementación ágil de componentes funcionales listos para producción.",
       details: "Nos encargamos de materializar tus necesidades digitales, entregando soluciones listas para usar en tu día a día. Nos aseguramos de que cada funcionalidad nueva se integre perfectamente con lo que ya tienes sin complicaciones."
     }

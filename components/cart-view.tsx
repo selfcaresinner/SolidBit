@@ -49,6 +49,9 @@ export function CartView() {
         <div className="bg-slate-card p-12 border border-surgical-border space-y-6">
             <input placeholder="Nombre Completo" value={contactInfo.name} onChange={e => updateContact({...contactInfo, name: e.target.value})} className="w-full bg-deep-black p-4 border border-gray-700"/>
             <input placeholder="Email" value={contactInfo.email} onChange={e => updateContact({...contactInfo, email: e.target.value})} className="w-full bg-deep-black p-4 border border-gray-700"/>
+            <input placeholder="Teléfono" value={contactInfo.phone} onChange={e => updateContact({...contactInfo, phone: e.target.value})} className="w-full bg-deep-black p-4 border border-gray-700"/>
+            <input placeholder="Empresa" value={contactInfo.company} onChange={e => updateContact({...contactInfo, company: e.target.value})} className="w-full bg-deep-black p-4 border border-gray-700"/>
+            <textarea placeholder="Dirección / Domicilio Fiscal" value={contactInfo.address} onChange={e => updateContact({...contactInfo, address: e.target.value})} className="w-full bg-deep-black p-4 border border-gray-700 h-24"/>
             
             <div className="flex gap-2">
                 <input placeholder="Cupón (SOLIDBIT15)" value={couponInput} onChange={e => setCouponInput(e.target.value)} className="w-full bg-deep-black p-4 border border-gray-700"/>
@@ -58,7 +61,7 @@ export function CartView() {
             <div className="text-3xl font-bold py-6">Total: ${total.toFixed(2)}</div>
             <button 
                 onClick={handleCheckout} 
-                disabled={!contactInfo.name || !contactInfo.email || cart.length === 0} 
+                disabled={!contactInfo.name || !contactInfo.email || !contactInfo.phone || !contactInfo.company || !contactInfo.address || cart.length === 0} 
                 className="w-full bg-cyan-accent text-deep-black p-4 font-bold disabled:opacity-50 hover:opacity-90 transition-all font-mono"
             >
                 PROCEDER A PAGO SEGURO
