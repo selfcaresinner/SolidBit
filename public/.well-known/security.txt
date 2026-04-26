@@ -1,0 +1,4 @@
+Contact: mailto:contacto@solidbit.mx
+Expires: 2027-04-22T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://solidbit.mx/.well-known/security.txt

@@ -13,7 +13,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const products: any = {
     'module_01': { 
       title: "Auditoría y Análisis Estratégico", 
-      price: 50, 
+      price: 25000, 
+      totalEstimate: "25,000 MXN",
       desc: "Elevamos la visión operativa mediante diagnósticos de alta precisión.",
       details: "Revisamos a fondo el código fuente, la infraestructura cloud y las bases de datos de tu plataforma actual para detectar cuellos de botella, vulnerabilidades de seguridad y deuda técnica. Entregamos un reporte accionable con prioridades.",
       forWho: "Empresas con software legacy o plataformas que están fallando bajo alta demanda.",
@@ -22,7 +23,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     },
     'module_02': { 
       title: "Arquitectura Cloud y Bases de Datos", 
-      price: 50, 
+      price: 15000, 
+      totalEstimate: "45,000 MXN",
       desc: "Construimos bases lógicas robustas que soportan el crecimiento a escala.",
       details: "Diseñamos bases de datos relacionales y no relacionales optimizadas, configuramos contenedores (Docker/Kubernetes) y diseñamos APIs REST o GraphQL preparadas para ser consumidas por múltiples clientes de forma concurrente sin caídas.",
       forWho: "Startups escalando o plataformas que necesitan reestructurar su backend para soporte masivo.",
@@ -31,7 +33,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     },
     'module_03': { 
       title: "Desarrollo de Apps Móviles", 
-      price: 50, 
+      price: 25000, 
+      totalEstimate: "125,000 MXN+",
       desc: "Aplicaciones nativas e híbridas de alto rendimiento listas para producción.",
       details: "Desarrollamos aplicaciones móviles en React Native o Swift/Kotlin. Desde la experiencia de usuario (UI/UX) hasta la conexión con el hardware del dispositivo (GPS, Cámara, Bluetooth) y notificaciones push, garantizando una calificación de 5 estrellas en las tiendas.",
       forWho: "Negocios B2C que requieren estar en el bolsillo del usuario, o herramientas B2B para trabajo en campo.",
@@ -40,7 +43,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     },
     'module_04': { 
       title: "Sistemas ERP y CRM a la Medida", 
-      price: 50, 
+      price: 35000, 
+      totalEstimate: "280,000 MXN+",
       desc: "Sistemas de gestión interna para automatizar y gobernar flujos operativos complejos.",
       details: "No adaptamos tu negocio a un software genérico; creamos el software para que encaje perfecto en tus procesos. Incluye módulos de inventario, facturación, recursos humanos, logística y paneles de control en tiempo real.",
       forWho: "Empresas medianas/grandes cuyos procesos en Excel o softwares genéricos (como SAP/Odoo) ya no dan abasto.",
@@ -49,7 +53,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     },
     'module_05': { 
       title: "E-Commerce de Alto Volumen", 
-      price: 50, 
+      price: 20000, 
+      totalEstimate: "95,000 MXN+",
       desc: "Tiendas en línea preparadas para Black Friday y transacciones seguras.",
       details: "Creamos experiencias de comercio electrónico B2B y B2C ultra-rápidas usando Next.js y pasarelas como Stripe/MercadoPago. Nos enfocamos en la velocidad de carga (SEO) y en un checkout sin fricciones para maximizar la conversión.",
       forWho: "Marcas con alto tráfico o mayoristas (B2B) que requieren integraciones complejas de inventario en tiempo real.",
@@ -58,7 +63,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     },
     'module_06': { 
       title: "SaaS & Web Apps Complejas", 
-      price: 50, 
+      price: 25000, 
+      totalEstimate: "150,000 MXN+",
       desc: "Software como Servicio y plataformas web interactivas.",
       details: "Si tienes una idea para un software que quieres cobrar por suscripción (SaaS), o necesitas una herramienta web de uso diario para tus clientes (como un portal de facturas o una red social nicho), lo construimos desde cero con tecnologías modernas.",
       forWho: "Fundadores. Empresas lanzando productos digitales o digitalizando el servicio al cliente.",
@@ -99,13 +105,14 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-surgical-border/30">
-                <h3 className="font-mono text-cyan-accent text-sm mb-2 uppercase">/ Entregables</h3>
-                <p className="text-text-p font-sans text-sm bg-deep-black p-4 border border-surgical-border">{product.deliverables}</p>
+            <div className="pt-6 border-t border-surgical-border/30">
+                <h3 className="font-mono text-cyan-accent text-sm mb-2 uppercase">/ Inversión Total Estimada</h3>
+                <p className="text-text-p font-sans text-xl font-bold">{product.totalEstimate}</p>
+                <p className="text-text-s text-xs mt-1">Este monto es una estimación base; el costo final se determinará tras la fase de descubrimiento.</p>
               </div>
             </div>
 
-            <div className="text-2xl font-bold mb-8">$ {product.price} MXN <span className="text-sm font-normal text-text-s font-mono">/ PAGO INICIAL</span></div>
+            <div className="text-2xl font-bold mb-8">$ {product.price} MXN <span className="text-sm font-normal text-text-s font-mono">/ PAGO DE INICIO</span></div>
             <button 
                 onClick={() => addToCart(product)}
                 className="border border-cyan-accent text-cyan-accent px-6 py-3 font-mono hover:bg-cyan-accent hover:text-deep-black transition-all"

@@ -4,12 +4,12 @@ import { useRouter } from 'next/navigation';
 export function Framework() {
   const router = useRouter();
   const products = [
-    { id: "module_01", title: "Análisis Estratégico", desc: "Elevamos la visión operativa mediante diagnósticos de alta precisión.", priceId: "price_product_01" },
-    { id: "module_02", title: "Arquitectura Sofisticada", desc: "Construimos bases lógicas robustas que soportan el crecimiento a escala.", priceId: "price_product_02" },
-    { id: "module_03", title: "Entrega de Software", desc: "Implementación ágil de componentes funcionales listos para producción.", priceId: "price_product_03" },
-    { id: "module_04", title: "Solución de Software General", desc: "Desarrollamos soluciones cohesionadas para optimizar flujos operativos complejos.", priceId: "price_product_04" },
-    { id: "module_05", title: "Creación de Página Web", desc: "Forjamos identidades digitales con alto rendimiento y experiencia de usuario optimizada.", priceId: "price_product_05" },
-    { id: "module_06", title: "Diseño de Software", desc: "Modelamos la estructura lógica para garantizar coherencia y navegación intuitiva.", priceId: "price_product_06" }
+    { id: "module_01", title: "Auditoría y Análisis Estratégico", desc: "Elevamos la visión operativa mediante diagnósticos de alta precisión.", priceId: "price_product_01" },
+    { id: "module_02", title: "Arquitectura Cloud y Bases de Datos", desc: "Construimos bases lógicas robustas que soportan el crecimiento a escala.", priceId: "price_product_02" },
+    { id: "module_03", title: "Desarrollo de Apps Móviles", desc: "Aplicaciones nativas e híbridas de alto rendimiento listas para producción.", priceId: "price_product_03" },
+    { id: "module_04", title: "Sistemas ERP y CRM a la Medida", desc: "Desarrollamos soluciones cohesionadas para optimizar flujos operativos complejos.", priceId: "price_product_04" },
+    { id: "module_05", title: "E-Commerce de Alto Volumen", desc: "Forjamos identidades digitales con alto rendimiento y experiencia de usuario optimizada.", priceId: "price_product_05" },
+    { id: "module_06", title: "SaaS & Web Apps Complejas", desc: "Modelamos la estructura lógica para garantizar coherencia y navegación intuitiva.", priceId: "price_product_06" }
   ];
 
   return (
